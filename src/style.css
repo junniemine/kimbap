@@ -1,0 +1,169 @@
+body{
+  background:#000;
+  color: #ffffff;
+  font-family: "Courier New", monospace;
+  margin:0;
+  padding:8px;
+  user-select:none;
+  -webkit-user-select:none;
+  font-size:14px;
+}
+
+header{
+  padding:8px 0;
+  font-size:14px;
+  font-weight:normal;
+  color:#ffffff !important;
+}
+header #dayInfo,
+header #moneyToday {
+  font-size:14px;
+  margin-top:4px;
+}
+
+main#game{
+  display:block;
+  margin-top:8px;
+}
+
+/* customers / kitchen / recipe are plain text areas */
+section {
+  padding:4px;
+  display:block;
+}
+
+#customers {
+  min-height: 160px;
+}
+
+#kitchen {
+  margin-top: 12px;
+}
+
+#ingredients {
+  margin-top: 24px;
+  margin-left: 0;
+  padding-left: 0;
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  white-space: normal;
+  flex-wrap:wrap;
+}
+
+pre { margin:4px 0; white-space:pre; font-size:14px; color:#ffffff !important; }
+
+#recipe,
+#btn-recipe {
+  margin-left: 0;
+  padding-left: 0;
+  font-size:14px;
+}
+
+/* ingredients area */
+#stations {
+  display:flex;
+  gap:30px;
+  justify-content:flex-start;
+  align-items:flex-start;
+  margin-top:8px;
+}
+
+.station {
+  display:inline-block;
+  min-width:8ch;
+  max-width:10ch;
+  padding:0;
+  margin:0;
+  white-space:pre;
+  font-size:14px;
+  line-height:1.1;
+  color:#ffffff;
+  user-select: none;
+}
+
+/* rice stack */
+#riceStack {
+  margin-left:0;
+  font-size:14px;
+  line-height:1.1;
+  display:inline-block;
+  vertical-align:top;
+  white-space:pre;
+}
+
+
+
+/* finish and upgrade modal */
+#finish { cursor:pointer; padding-left:6px; }
+#upgradeModal.hidden { display:none; }
+#upgradeModal { position:fixed; left:8px; bottom:8px; background:transparent; }
+#status { margin-top:6px; color:#eee; }
+
+/* mobile */
+@media (max-width:900px){
+  #stations { flex-wrap:wrap; }
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.hidden {
+  display: none;
+}
+
+.overlay-box {
+  text-align: center;
+  font-size: 14px;
+}
+
+.overlay-box h1 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.overlay-box button {
+  margin-top: 12px;
+  padding: 6px 14px;
+  background: black;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+/* 김 펼쳐지기 */
+.station.expand-kim::after {
+  content: "김김김김김";
+  display: block;
+  white-space: nowrap;
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: unfold 0.6s steps(5) forwards;
+}
+
+/* 밥 펼쳐지기 */
+.station.expand-rice::after {
+  content: "밥밥밥밥밥";
+  display: block;
+  white-space: nowrap;
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: unfold 0.6s steps(5) forwards;
+}
+
+@keyframes unfold {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.ing {
+  display: inline-block;
+  cursor: grab;
+}

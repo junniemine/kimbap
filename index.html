@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>김밥 텍스트 타이쿤 (리빌드)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body>
+
+<header>
+  김밥 텍스트 타이쿤
+  <div id="dayInfo">Day 1</div>
+  <div id="moneyToday">오늘 번 돈: 0원</div>
+</header>
+
+<main id="game">
+  <section id="customers">
+    <div>손님 대기열</div>
+    <pre id="orderList"></pre>
+  </section>
+
+  <section id="kitchen">
+    <div>조리대</div>
+    <div id="stations">
+      <pre class="station" id="station1"></pre>
+      <pre class="station" id="station2"></pre>
+      <pre class="station" id="station3"></pre>
+    </div>
+    <pre id="board" aria-hidden="true"></pre>
+    <div id="status"></div>
+  </section>
+
+  <section id="ingredients">
+  <div class="ing" id="ing-kim">김</div>
+  <div class="ing" id="ing-dan">단무지</div>
+  <div class="ing" id="ing-cham">참치</div>
+  <div class="ing" id="ing-kkaennip">깻잎</div>
+  <div class="ing" id="ing-donkatsu">돈까스</div>
+  <div class="ing" id="ing-babsot">밥솥</div>
+  <div class="ing" id="ing-cheese">치즈</div>
+<div class="ing" id="ing-jangguk">장국</div>
+
+  <pre id="riceStack">(밥 없음)</pre>
+
+  <div class="ing" id="finish">완성</div>
+</section>
+
+<div id="btn-recipe" class="ing">레시피</div>
+
+<div id="recipeText" class="hidden">
+
+  <pre class="recipe day1">
+[ DAY 1 레시피 ]
+
+기본 김밥
+- 김
+- 밥
+- 단무지
+
+참치 김밥
+- 김
+- 밥
+- 참치
+  </pre>
+
+  <pre class="recipe day2 hidden">
+[ DAY 2 레시피 ]
+
+치즈 김밥
+- 김
+- 밥
+- 치즈
+
+참치 김밥
+- 김
+- 밥
+- 참치
+  </pre>
+
+  <pre class="recipe day3 hidden">
+[ DAY 3 레시피 ]
+
+스페셜 김밥
+- 김
+- 밥
+- 단무지
+- 참치
+- 치즈
+  </pre>
+
+</div>
+
+<!-- 업그레이드 모달 (텍스트만) -->
+<div id="upgradeModal" class="hidden" role="dialog" aria-hidden="true">
+  <pre id="upgradeText"></pre>
+</div>
+
+<!-- GAME OVER -->
+<div id="gameOverScreen" class="overlay hidden">
+  <div class="overlay-box">
+    <h1>GAME OVER</h1>
+    <p id="gameOverReason"></p>
+    <p id="gameOverMoney"></p>
+    <button id="retryBtn">다시 시작</button>
+  </div>
+</div>
+
+<!-- DAY CLEAR -->
+<div id="dayClearScreen" class="overlay hidden">
+  <div class="overlay-box">
+    <h1>DAY CLEAR</h1>
+    <p id="dayClearMoney"></p>
+    <button id="nextDayBtn">다음 날</button>
+  </div>
+</div>
+
+<script src="./src/main.js"></script>
+</body>
+</html>
