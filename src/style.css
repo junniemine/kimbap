@@ -1,14 +1,23 @@
+@font-face {
+  font-family: 'NeoDunggeunmo';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.3/NeoDunggeunmo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 body{
   background:#000;
   color: #ffffff;
-  font-family: "Courier New", monospace;
+  font-family: 'NeoDunggeunmo';
   margin:0;
   padding:8px;
   user-select:none;
   -webkit-user-select:none;
   font-size:14px;
 }
-
+body, pre {
+  font-family: "NeoDunggeunmo", monospace;
+}
 header{
   padding:8px 0;
   font-size:14px;
